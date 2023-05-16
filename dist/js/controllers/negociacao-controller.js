@@ -1,14 +1,18 @@
 import { Negociacao } from "../models/negociacao.js";
+import { Negociacoes } from "../models/negociacoes.js";
 // controller controla a interação do formulario, incluinco os valores inserido.
 export class NegociacaoController {
     constructor() {
+        this.negociacoes = new Negociacoes();
         this.inputData = document.querySelector('#data'); //# é o antigo _ de js;
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
     }
     adiciona() {
         const negociacao = this.criaNegociacao();
-        console.log(negociacao);
+        this.negociacoes.adiciona(negociacao);
+        const negociacoes = this.negociacoes.lista();
+        console.log(this.negociacoes.lista());
         this.limparFormulario();
     }
     criaNegociacao() {
