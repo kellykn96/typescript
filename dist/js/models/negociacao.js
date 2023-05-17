@@ -7,18 +7,31 @@ export class Negociacao {
     //     this._quantidade = quantidade;
     //     this._valor = valor;
     // }
-    constructor(_data, _quantidade, _valor) {
-        this._data = _data;
-        this._quantidade = _quantidade;
-        this._valor = _valor;
-    } //essa linha toda representa o código acima. Isso é possível, pois o construtor recebe obrigatóriamente os mesmos nomes das propriedades
-    get data() {
+    /*get data() { //getters não apresentam _ como diferenciacao de atributo
         return this._data;
     }
-    get quantidade() {
+
+    get quantidade(){
         return this._quantidade;
     }
-    get valor() {
+
+    get valor(){
         return this._valor;
     }
+
+
 }
+
+*/
+    constructor(_data, quantidade, valor) {
+        this._data = _data;
+        this.quantidade = quantidade;
+        this.valor = valor;
+    }
+    get data() {
+        const data = new Date(this._data.getTime());
+        return data;
+    }
+}
+//public readonly permite accessar como um getter, mas não alterar como um private, substituindo ambos.
+//também nao precisamo das propriedades, pois o typescript entende que o constructor terá os mesmos nomes
