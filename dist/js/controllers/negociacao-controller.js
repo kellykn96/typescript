@@ -1,6 +1,6 @@
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
-import { NegociacoesView } from "../views/negociacoes-views.js";
+import { NegociacoesView } from "../views/negociacoes-view.js";
 // controller controla a interação do formulario, incluinco os valores inserido.
 export class NegociacaoController {
     constructor() {
